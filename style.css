@@ -46,7 +46,7 @@ body {
   top: 50%;
   transform: translateY(-50%);
 
-  width: 42px;
+  width: auto;
   height: 42px;
   border-radius: 10px;
 
@@ -149,7 +149,7 @@ body {
   }
 
   .topbar-btn {
-    width: 40px;
+    width: auto;
     height: 40px;
     right: 10px;
   }
@@ -157,4 +157,113 @@ body {
   .grid {
     gap: 14px;
   }
+}
+
+
+/* ===== Page layout ===== */
+.layout {
+  display: flex;
+  width: min(1200px, 100%);
+  margin: 20px auto;
+  gap: 20px;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  background: rgba(90, 90, 90, 0.85);
+  border-radius: 14px;
+  padding: 16px;
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+  backdrop-filter: blur(8px);
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.sidebar a:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateX(4px);
+}
+
+/* ===== Main content ===== */
+.content {
+  flex: 1;
+  background: rgba(7, 7, 7, 0.61);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+/* ===== Sections ===== */
+.content section {
+  margin-bottom: 60px;
+  scroll-margin-top: 100px; /* fixes anchor offset */
+}
+
+.content h2 {
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+  color: #ffffff;
+}
+.content section p {
+  color: #a2bce4;
+}
+.content h3 {
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  color: #da7474;
+}
+/* ===== Mobile layout ===== */
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: relative;
+    top: 0;
+  }
+
+  .sidebar nav {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .sidebar a {
+    flex: 1;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+}
+.cv-btn {
+  display: inline-block;
+  padding: 10px 16px;
+  background: rgba(90, 90, 90, 0.85);
+  color: #dfe6a3;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.cv-btn:hover {
+  background: rgba(70, 70, 70, 0.9);
+  transform: translateY(-1px);
 }
