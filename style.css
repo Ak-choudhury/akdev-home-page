@@ -1,207 +1,160 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'poppins',sans-serif;
-}
-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    width: 100%;
-    
-    background: url('background.jpg')no-repeat;
-    background-position: center;
-    background-size: cover;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
 }
 
-
-.form-box{
-    position: relative;
-    width: 400px;
-    height: fit-content;
-    background: transparent;
-    border: 2px solid rgba(255,255,255,0.5);
-    border-radius: 20px;
-    backdrop-filter: blur(15px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-h2{
-    font-size: 2em;
-    color: #fff;
-    text-align: center;
-}
-.inputbox{
-    position: relative;
-    margin: 30px 0;
-    width: 310px;
-    border-bottom: 2px solid #fff;
-}
-.inputbox label{
-    position: absolute;
-    top:  50%;
-    left: 5px;
-    transform: translateY(-50%);
-    color: #fff;
-    font-size: 1em;
-    pointer-events: none;
-    transition: .5s;
-    
-}
-input:focus ~ label,
-input:valid ~ label{
-top: -5px;
-}
-.inputbox input {
-    width: 100%;
-    height: 50px;
-    background: transparent;
-    border: none;
-    outline: none;
-    font-size: 1em;
-    padding:0 35px 0 5px;
-    color: #fff;
-}
-.inputbox ion-icon{
-    position: absolute;
-    right: 8px;
-    color: #fff;
-    font-size: 1.2em;
-    top: 20px;
-}
-.forget{
-    margin: -15px 0 15px ;
-    font-size: .9em;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;  
+body {
+  min-height: 100vh;
+  background: url("background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
 }
 
-.forget label input{
-    margin-right: 3px;
-    
+/* Grey header / navbar */
+.topbar {
+  width: min(1100px, calc(100% - 24px));
+  margin: 16px auto 0 auto;
+  padding: 14px 16px;
+  background: rgba(120, 120, 120, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  backdrop-filter: blur(8px);
 }
-.forget label a{
-    color: #fff;
-    text-decoration: none;
+
+.title {
+  color: #fff;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 600;
+  text-align: center;
 }
-.forget label a:hover{
-    text-decoration: underline;
+
+/* Top-right button inside header */
+.topbar-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+
+  display: grid;
+  place-items: center;
+
+  background: rgba(90, 90, 90, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+  text-decoration: none;
+  font-size: 22px;
+
+  transition: transform 0.15s ease, background 0.15s ease;
 }
-button{
-    width: 100%;
+
+.topbar-btn:hover {
+  background: rgba(70, 70, 70, 0.9);
+  transform: translateY(-50%) scale(1.03);
+}
+
+/* Main page container */
+.page {
+  width: min(1100px, calc(100% - 24px));
+  margin: 18px auto 28px auto;
+  flex: 1;
+}
+
+/* Responsive grid */
+.grid {
+  display: grid;
+  gap: 18px;
+
+  /* Auto layout: as many columns as fit */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+/* Card button */
+.card {
+  text-decoration: none;
+  color: inherit;
+
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.22);
+  background: rgba(245, 245, 245, 0.95);
+}
+
+.card-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: #eaeaea;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-text {
+  padding: 14px 14px 16px 14px;
+}
+
+.card-text h3 {
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+  color: #111;
+}
+
+.card-text p {
+  font-size: 0.92rem;
+  color: #444;
+  line-height: 1.35;
+}
+
+/* Disabled cards */
+.card-disabled {
+  opacity: 0.7;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Mobile tweaks */
+@media (max-width: 420px) {
+  .topbar {
+    padding: 12px 12px;
+  }
+
+  .topbar-btn {
+    width: 40px;
     height: 40px;
-    border-radius: 40px;
-    background: #fff;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    font-size: 1em;
-    font-weight: 600;
-}
-.register{
-    font-size: .9em;
-    color: #fff;
-    text-align: center;
-    margin: 25px 0 10px;
-}
-.register p a{
-    text-decoration: none;
-    color: #fff;
-    font-weight: 600;
-}
-.register p a:hover{
-    text-decoration: underline;
-}
+    right: 10px;
+  }
 
-.button-container {
-    display: flex;
-    flex-direction: row; /* Places buttons side by side */
-    justify-content: center; /* Centers the buttons horizontally */
-    align-items: center; /* Centers the buttons vertically */
-    gap: 20px; /* Adds space between the buttons */
-    width: 100%; /* Full width of the screen */
-    height: 90vh; /* Full height of the screen */
+  .grid {
+    gap: 14px;
+  }
 }
-
-.hom-but {
-    display: flex;
-    flex-direction: column; /* Stacks icon and text vertically */
-    align-items: center; /* Centers icon and text horizontally */
-    justify-content: center; /* Centers icon and text vertically */
-    flex-grow: 10px; /* Prevents the button from expanding */
-    flex-shrink: 0; /* Prevents the button from shrinking */
-    width: 350px; /* Set a fixed width for each button */
-    height: 400px; /* Set a fixed height for each button */
-    text-decoration: none;
-    color: inherit;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #fffafa;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s, box-shadow 0.3s;
-    overflow: hidden;
-}
-
-.hom-but:hover {
-    background-color: #f1efef;
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-}
-
-.hom-but .button-content {
-    display: flex;
-    flex-direction: column; /* Stacks icon and text */
-    align-items: center; /* Centers content horizontally */
-    justify-content: center; /* Centers content vertically */
-    height: 110%; /* Full height of the button */
-}
-
-.hom-but .icon img {
-    width: 180px; /* Adjust icon size */
-    height: 180px;
-    margin-bottom: 15px; /* Space between icon and text */
-}
-
-.hom-but .text h3 {
-    margin: 0;
-    font-size: 1.2em;
-    text-align: center;
-}
-
-.hom-but .text p {
-    margin: 2px 0;
-    font-size: 0.9em;
-    color: #555;
-    text-align: center;
-}
-
-.home_page{
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    width: 100%;
-    
-    background: url('home_background.png')no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-blend-mode: darken;
-}
-
-.exam21{
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    width: 100%;
-    
-    background: url('home_background.png')no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-blend-mode: darken;
-}
-
-

@@ -1,62 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="style.css">
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-<link rel="stylesheet" href="navstyle.css">
-<meta charset="UTF-8" />
-<title>Home</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Projects</title>
 
-</style>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
 <body>
-    <h1>My projects</h1>
-            <div class="home_page">
-            <div class="button-container">
-                <a href="https://quran.akdev.uk" class="hom-but">
-                    <div class="button-content">
-                        <div class="icon">
-                            <img src="quran.jfif" alt="Icon 1" />
-                        </div>
-                        <div class="text">
-                            <h3>quran player</h3>
-                            <p>a spotify like app for quran recitations where files are stored on a home-made nas and served to the client.</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="https://maze-game.akdev.uk" class="hom-but">
-                    <div class="button-content">
-                        <div class="icon">
-                            <img src="maze game.webp" alt="Icon 2" />
-                        </div>
-                        <div class="text">
-                            <h3>Maze Game</h3>
-                            <p>A simple maze game built with HTML, CSS, and JavaScript.</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="" class="hom-but">
-                    <div class="button-content">
-                        <div class="icon">
-                            <img src="under-construction-gif-11.gif" alt="Icon 3" />
-                        </div>
-                        <div class="text">
-                            <h3>Under Construction</h3>
-                            <p>This project is currently under development.</p>
-                            
-                        </div>
-                    </div>
-                </a>
-                <a href="" class="hom-but">
-                    <div class="button-content">
-                        <div class="icon">
-                            <img src="under-construction-gif-11.gif" alt="Icon 2" />
-                        </div>
-                        <div class="text">
-                            <h3>Under Construction</h3>
-                            <p>This project is currently under development.</p>
-                        </div>
-                    </div>
-                </a>
+  <!-- Top header / navbar -->
+  <header class="topbar">
+    <h1 class="title">My Projects</h1>
+
+    <!-- Top-right button -->
+    <a class="topbar-btn" href="#" title="Settings / Menu">
+      <i class='bx bx-cog'></i>
+    </a>
+  </header>
+
+  <!-- Cards -->
+  <main class="page">
+    <section class="grid">
+      <a href="https://quran.akdev.uk" class="card">
+        <div class="card-img">
+          <img src="quran.jfif" alt="Quran Player" />
+        </div>
+        <div class="card-text">
+          <h3>Quran Player</h3>
+          <p>A spotify-like app for Quran recitations hosted on a homemade NAS.</p>
+        </div>
+      </a>
+
+      <a href="https://maze-game.akdev.uk" class="card">
+        <div class="card-img">
+          <img src="maze game.webp" alt="Maze Game" />
+        </div>
+        <div class="card-text">
+          <h3>Maze Game</h3>
+          <p>A simple maze game built with HTML, CSS, and JavaScript.</p>
+        </div>
+      </a>
+
+      <a href="#" class="card card-disabled">
+        <div class="card-img">
+          <img src="under-construction-gif-11.gif" alt="Under Construction" />
+        </div>
+        <div class="card-text">
+          <h3>Under Construction</h3>
+          <p>This project is currently under development.</p>
+        </div>
+      </a>
+
+      <a href="#" class="card card-disabled">
+        <div class="card-img">
+          <img src="under-construction-gif-11.gif" alt="Under Construction" />
+        </div>
+        <div class="card-text">
+          <h3>Under Construction</h3>
+          <p>This project is currently under development.</p>
+        </div>
+      </a>
+    </section>
+  </main>
 </body>
+</html>
